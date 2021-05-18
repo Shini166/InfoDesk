@@ -1,0 +1,153 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family:Inter, sans-serif;
+}
+
+
+.card {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04);
+    border-radius:1rem;
+    padding:3rem 2rem;
+    background-color:white;
+}
+
+
+.btn{
+    font-size:16px;
+    font-weight:normal;
+    text-transform:capitalize;
+    padding:1rem 2rem;
+}
+
+.btn-sm {
+    padding: 0.8rem 1.6rem;
+    font-size:14px;
+    border-radius:8px;
+    font-weight:bold;
+}
+.navbar-brand {
+    font-weight: 800;
+
+   
+}
+
+.navbar-inverse .navbar-brand {
+    color: #191919;
+}
+
+
+.btn-white {
+    background-color: #fff;
+    border-color: #dbdbdb;
+    color:black;
+}
+
+.btn-dark {
+    background-color: #191919;
+    border-color: #000;
+    color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 0.5rem;
+    margin-top:0;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1, .h1 {
+    font-size: 3.75rem;
+}
+
+h2, .h2 {
+    font-size: 2.5rem;
+}
+
+h3, .h3 {
+    font-size:2.2rem;
+}
+
+h4, .h4 {
+    font-size: 1.3125rem;
+}
+
+h5, .h5 {
+    font-size: 1.09375rem;
+}
+
+h6, .h6 {
+    font-size: 0.875rem;
+}
+
+
+.bg-primary {
+    background-color: #0E49B5;
+}
+
+.bg-secondary {
+    background-color: #7EE081;
+}
+
+.bg-white {
+    background-color:#fff;
+}
+
+.bg-dark {
+    background-color: #191919;
+}
+
+.text-gray{
+    color:#acacac;
+}
+
+.card-img{
+    width:100%;
+    height:auto;
+    margin: 2rem auto -0.8rem;
+}
+
+.card-small{
+    overflow:hidden;
+    padding: 3rem 2rem 0;
+    height:34rem;
+    max-height:40rem;
+
+}
+
+.table {
+    background-color: #fff;
+    border-radius: 1rem;
+    margin: 1.5rem 0;
+    display:block;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+.table tbody{
+     display:table;
+     width:100%;
+     overflow:hidden;
+ }
+
+    .table .thead {
+        background-color: #c6daff;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        overflow:hidden;
+    }
+
+    .table th {
+        color: #0E49B5;
+        font-weight:700;
+      
+    }
+
+    .table > tbody > tr > th {
+        padding: 2rem;
+      
+    }
+    .table > tbody > tr > td {
+        padding: 2rem;
+    }
+    

@@ -1,0 +1,59 @@
+﻿@model Consume_WebAPI_Project.Models.user
+
+@{
+    ViewBag.Title = "Signup";
+}
+
+
+<div class="row justify-content-center">
+
+    <div class="col-lg-5 col-md-7 col-sm-8 col-10 shadow p-5 text-center mb-4">
+
+        <div class="card bg-white mb-5">
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h3 class="mb-0">Clinic Member Registration</h3>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.user_name, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-12 mb-3">
+                            @Html.EditorFor(model => model.user_name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.user_name, "", new { @class = "d-block text-left text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        @Html.LabelFor(model => model.user_password, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.user_password, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.user_password, "", new { @class = "d-block text-left text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="submit" value="Signup" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="d-inline-flex">
+            <p>Already have an account? @Html.ActionLink("Login", "Login")</p>
+        </div>
+        <div class="d-block">
+            @Html.ActionLink("Go to Home", "Index", "Home")
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

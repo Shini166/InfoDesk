@@ -1,0 +1,77 @@
+﻿@model Consume_WebAPI_Project.Models.PaitentViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        @*<dt>
+            @Html.DisplayNameFor(model => model.paitent_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paitent_id)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paitent_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paitent_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paitent_age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paitent_age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paitent_visitdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paitent_visitdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paitent_symptoms)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paitent_symptoms)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paitent_medications)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paitent_medications)
+        </dd>
+
+    </dl>
+</div>
+
+<p>
+
+    @if (User.IsInRole("secretary"))
+    {
+        @Html.ActionLink("Edit Patient Details", "Edit", new { id = Model.paitent_id }) <span> | </span>
+    }
+    @if (User.IsInRole("doctor"))
+    {
+        @Html.ActionLink("Edit Medcine Details", "AddMedcine", new { id = Model.paitent_id }) <span> | </span>
+    }
+
+    @Html.ActionLink("Back to List", "Index")
+
+</p>

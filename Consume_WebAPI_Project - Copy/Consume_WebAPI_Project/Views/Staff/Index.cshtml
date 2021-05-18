@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Consume_WebAPI_Project.Models.StaffViewModel>
+
+@{
+    ViewBag.Title = "IndexStaff";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>IndexStaff</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.paitent_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paitent_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paitent_age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paitent_visitdate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.paitent_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paitent_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paitent_age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paitent_visitdate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

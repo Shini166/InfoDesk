@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Consume_WebAPI_Project.Models.PaitentViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center">
+    <h2>Patient List</h2>
+    @if (User.IsInRole("secretary"))
+    {
+        <p>
+            @Html.ActionLink("Add New Patient", "Create", null, new { @class = "btn btn-primary" })
+        </p>
+    }
+
+</div>
+<table class="table">
+    <tr class="thead">
+        <th>
+            @Html.DisplayNameFor(model => model.paitent_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paitent_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paitent_age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paitent_visitdate)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.paitent_symptoms)
+        </th>*@
+        @if (User.IsInRole("pharmacist") || User.IsInRole("doctor"))
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.paitent_medications)
+            </th>
+        }
+            <th></th>
+        </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.paitent_id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.paitent_name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.paitent_age)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.paitent_visitdate)
+    </td>
+    @*<td>
+            @Html.DisplayFor(modelItem => item.paitent_symptoms)
+        </td>*@
+    @if (User.IsInRole("pharmacist") || User.IsInRole("doctor"))
+    {
+        <td>
+            @Html.DisplayFor(modelItem => item.paitent_medications)
+        </td>
+    }
+<td>
+
+    @if (User.IsInRole("secretary"))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = item.paitent_id }) <span> | </span>
+    }
+
+    @if (User.IsInRole("doctor"))
+    {
+        if (String.IsNullOrWhiteSpace(item.paitent_medications))
+        {
+            @Html.ActionLink("Add Medicine", "Edit", new { id = item.paitent_id }) <span> | </span>
+        }
+        else
+        {
+
+            @Html.ActionLink("Edit Medicine", "Edit", new { id = item.paitent_id })
+            <span> | </span>
+        }
+    }
+
+    @Html.ActionLink("View Patient", "Details", new { id = item.paitent_id })
+
+    @*@if (User.IsInRole("secretary"))
+    {
+        @Html.ActionLink("Delete", "Delete", new { id = item.paitent_id })
+    }*@
+
+</td>
+    </tr>
+}
+
+</table>

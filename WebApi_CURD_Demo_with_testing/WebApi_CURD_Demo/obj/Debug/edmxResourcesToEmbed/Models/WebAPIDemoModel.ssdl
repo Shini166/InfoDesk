@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebAPIDemo_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Paitent_info">
+    <Key>
+      <PropertyRef Name="paitent_id" />
+    </Key>
+    <Property Name="paitent_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="paitent_name" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="paitent_age" Type="int" Nullable="false" />
+    <Property Name="paitent_visitdate" Type="date" Nullable="false" />
+    <Property Name="paitent_symptoms" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="paitent_medications" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="WebAPIDemo_DBModelStoreContainer">
+    <EntitySet Name="Paitent_info" EntityType="Self.Paitent_info" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
